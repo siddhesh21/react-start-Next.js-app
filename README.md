@@ -1,3 +1,11 @@
+## This is first app showcasing basic fundamentals but very pwerful ones'.
+
+
+
+## more detailed information on after optimisation build of app
+
+![terminal-build-app-info](https://user-images.githubusercontent.com/22409980/110704718-459bc200-81ed-11eb-9e24-122b260d2150.JPG)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
