@@ -1,11 +1,26 @@
-import styles from "../../styles/Home.module.css";
+import React from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import styles from "../../styles/Posts.module.css";
 
-function Posts(props) {
-  console.log(props);
+function Posts({ posts }) {
+  const router = useRouter();
+  // console.log(posts);
   return (
-    <div className={styles.container}>
+    <div>
       <title>Sid's Next App</title>
       <h1>Welcome to the POSTS</h1>
+
+      {posts.map(({ title, body, id, userId }) => (
+        <div
+          className={styles.postContainer}
+          key={id}
+          onClick={() => router.push(`/posts/${id}`)}
+        >
+          <h4>{title}</h4>
+          <h5>{body}</h5>
+        </div>
+      ))}
     </div>
   );
 }

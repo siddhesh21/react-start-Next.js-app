@@ -6,10 +6,10 @@ function SavedArticles() {
   const articles = useRecoilValue(userStateArticles);
   return (
     <div>
-      {articles.map(({ body, id, title, userId }) => (
+      {articles.map(({ body, id, title, user }) => (
         <div key={id}>
-          <h4 >
-            {title} by user #{userId}
+          <h4>
+            {title} by user {user.name}
           </h4>
           <p>{body}</p>
         </div>

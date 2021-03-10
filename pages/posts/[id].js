@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/Head";
 import Link from "next/Link";
+import styles from "../../styles/Post.module.css";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { userHasArticle, userStateArticles } from "../../atoms/userAtom";
 import { Button } from "@material-ui/core";
@@ -12,10 +13,10 @@ function Post({ post: { body, id, title, userId }, post, user }) {
 
   const saveArticle = () => {
     console.log("Saved user Article");
-    setUserArticles([...userArticles, post]);
+    setUserArticles([...userArticles, { ...post, user }]);
   };
 
-  // console.log(userArticles);
+  console.log(userArticles);
   console.log(hasArticle);
 
   return (
@@ -24,8 +25,7 @@ function Post({ post: { body, id, title, userId }, post, user }) {
         <title>Post by {user.name}</title>
       </Head>
 
-      <div>
-        <h1>This is a POST</h1>
+      <div className={styles.container}>
         <h2>
           #{id} - {title}
         </h2>
@@ -33,19 +33,20 @@ function Post({ post: { body, id, title, userId }, post, user }) {
         <p>UserID: {userId}</p>
         <p>{body}</p>
 
-        <Link href={`/posts/${id - 1}`}>&nbsp;Previous Post &nbsp;</Link>
+        <div className={styles.buttonContainer}>
+          <Link href={`/posts/${id - 1}`}>Previous Post</Link>
 
-        <Button
-          color="secondary"
-          variant="outlined"
-          disabled={hasArticle}
-          onClick={saveArticle}
-        >
-          {hasArticle ? "Article saved to you list" : "Save Article"}
-          Save Article
-        </Button>
+          <Button
+            color="secondary"
+            variant="outlined"
+            disabled={hasArticle}
+            onClick={saveArticle}
+          >
+            {hasArticle ? "Article saved to your List" : "Save Article"}
+          </Button>
 
-        <Link href={`/posts/${id + 1}`}>&nbsp; Next Post</Link>
+          <Link href={`/posts/${id + 1}`}>Next Post</Link>
+        </div>
       </div>
       <SavedArticles />
     </>

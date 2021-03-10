@@ -1,0 +1,20 @@
+.container {
+    padding: 20px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonContainer>a {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.buttonContainer>a:hover {
+    opacity: 0.9;
+    background-color: #000;
+    color: snow;
+}

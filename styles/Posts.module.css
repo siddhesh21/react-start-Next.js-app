@@ -1,0 +1,10 @@
+.postContainer {
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid black;
+}
+
+.postContainer:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
