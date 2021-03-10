@@ -1,6 +1,4 @@
-## This is first app showcasing basic fundamentals but very pwerful ones'.
-
-
+## This is first app showcasing basic fundamentals but very pwerful ones' such as routing, calling API, fetching information, linking, static side server rendering with preserving state, server side caching. 
 
 ## more detailed information on after optimisation build of app
 
